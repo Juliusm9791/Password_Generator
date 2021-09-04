@@ -10,8 +10,32 @@
     
 </head>
 <body>
-    <p>Open console</p>
-
+    <h1>Password Generator</h1>
+        <div>
+            <div>
+                <p id="showPasw">Your Secure Password</p>
+                <p id="len">standart 8 characters</p>
+            </div>
+            <button id="paswGen" onclick="genAndShow()">Generate Password</button>
+        </div>
+<br>
+        <div>
+            <input type="checkbox" id="showAdvance">
+            <label for="checkbox" id="showAdvanceLab"> Show Advantage selection</label><br>
+        </div>
+        <div id="advance">
+            <label for="forPaswLength" id="changePaswLabel">Password Length (8-128): 8</label>
+            <input type="number" id="forPaswLength" min="8" max="128" value="8">
+<br>
+            <label for="forPaswCap" id="changeCapLabel">Cap Lettes in Password: 1</label>
+            <input type="number" id="forPaswCap" min="1" max="2" value="1">
+<br>
+            <label for="forPaswNum" id="changeNumLabel">Numbers in Password: 1</label>
+            <input type="number" id="forPaswNum" min="1" max="2" value="1">
+<br>
+            <label for="forPaswSym" id="changeSymLabel">Symbols in Password: 1</label>
+            <input type="number" id="forPaswSym" min="1" max="2" value="1">            
+        </div>
     <script src='./assets/js/main.js'></script>
 </body>
 </html>
