@@ -3,10 +3,10 @@ let charArray = ["qwertyuiopasdfghjklzxcvbnm", //0
                  "1234567890",                 //2
                  "-=~!@#$%^&*()_+[]{}|?"]   //3
 
-let paswLength;
-let howCapsInPasw;
-let howNumbInPasw;
-let howSymbInPasw;
+let paswLength = 8;
+let howCapsInPasw = 1;
+let howNumbInPasw = 1;
+let howSymbInPasw = 1;
 
 function readValues() {
     paswLength = document.getElementById("forPaswLength").value;
@@ -16,7 +16,7 @@ function readValues() {
     howSymbInPasw = document.getElementById("forPaswSym").value;
 }
 
-document.getElementById("advance").addEventListener("change", updateText);
+//        Advantage meniu Show / Hide
 
 document.getElementById("showAdvance").addEventListener("change", updateVisibility);
 
@@ -25,19 +25,56 @@ function updateVisibility() {
         document.getElementById("advance").style.display = "block";
     } else {
         document.getElementById("advance").style.display = "none";
+        document.getElementById("paswGen").disabled = false; 
+        paswLength = document.getElementById("forPaswLength").value = 8;
+        howCapsInPasw = document.getElementById("forPaswCap").value = 1;
+        howNumbInPasw = document.getElementById("forPaswNum").value = 1;
+        howSymbInPasw = document.getElementById("forPaswSym").value = 1;
     }
-
 }
 
+//        Selecting and testng values "Advantage options"
+
+document.getElementById("forPaswLength").addEventListener("change", updateTextLen);
+document.getElementById("forPaswCap").addEventListener("change", updateText);
+document.getElementById("forPaswNum").addEventListener("change", updateText);
+document.getElementById("forPaswSym").addEventListener("change", updateText);
+
+
+ function updateTextLen() {
+    readValues();
+    console.log(typeof paswLength, paswLength)
+    if (paswLength < 8 || paswLength > 128) {
+        console.log("dfafasfasfsafasfas")
+        document.getElementById("paswGen").disabled = true;
+        document.getElementById("advanceLen").style.color = "red";
+        document.getElementById("errorMsgL").innerHTML = "Wrong Length";
+    }
+    else {
+        document.getElementById("paswGen").disabled = false;    
+        document.getElementById("advanceLen").style.color = "black";  
+        document.getElementById("errorMsgL").innerHTML = ""; 
+    }
+    updateText()
+ }
+ 
 function updateText() {
     readValues();
-    document.getElementById("changePaswLabel").textContent = "Password Length (8-128): " + paswLength;
-    document.getElementById("changeCapLabel").textContent = "Cap Lettes in Password: " + howCapsInPasw;
-    document.getElementById("changeNumLabel").textContent = "Numbers in Password: " + howNumbInPasw;
-    document.getElementById("changeSymLabel").textContent = "Symbols in Password: " + howSymbInPasw;
+    
+    let allow = paswLength - howCapsInPasw - howNumbInPasw - howSymbInPasw -1;
+    console.log(allow, howCapsInPasw);
+        if (allow < 0 || paswLength < 8 || paswLength > 128) {
+        document.getElementById("errorMsg").innerHTML = "Too much characters";
+        document.getElementById("paswGen").disabled = true;
+        document.getElementById("advanceChar").style.color = "red";
+        }
+        else {
+            document.getElementById("errorMsg").innerHTML = "";
+            document.getElementById("paswGen").disabled = false;
+            document.getElementById("advanceChar").style.color = "black";
+        }
 }
-
-
+ 
 //           Password Generator
 
 function pickRandom(x,y) {
@@ -70,9 +107,9 @@ function genAndShow() {
     let numbersInPasw = pickRandom(howNumbInPasw,2);
     let symbolInPasw = pickRandom(howSymbInPasw,3);
     newPassword = lowerLetters + capInPasw + numbersInPasw + symbolInPasw;
-    console.log(newPassword);
+    // console.log(newPassword);
     let shuffledPasw = shuffle();
     document.getElementById("showPasw").innerHTML = shuffledPasw;
-    console.log(shuffledPasw);
-    document.getElementById("len").innerHTML = shuffledPasw.length;
+    // console.log(shuffledPasw);
+    document.getElementById("len").innerHTML = "Your Password Length Is: " + shuffledPasw.length;
 }

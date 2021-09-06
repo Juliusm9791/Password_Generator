@@ -10,31 +10,44 @@
     
 </head>
 <body>
+    <div class="alignLeft">
+    <p>Standard password generator length is:</p>
+    <p>8&nbsp;characters include: 1&nbsp;Caps letter, 1&nbsp;number,</p> 
+    <p>1&nbsp;symbol and other characters is lower case letters.</p>
+    </div>
     <h1>Password Generator</h1>
         <div>
-            <div>
-                <p id="showPasw">Your Secure Password</p>
-                <p id="len">standart 8 characters</p>
+            <div id="paswBox">
+                <p id="showPasw">Your Password will be here</p>
+                <p id="len">Your Password Length Is: 8</p>
             </div>
             <button id="paswGen" onclick="genAndShow()">Generate Password</button>
         </div>
 <br>
         <div>
             <input type="checkbox" id="showAdvance">
-            <label for="checkbox" id="showAdvanceLab"> Show Advantage selection</label><br>
+            <label for="checkbox" id="showAdvanceLab">Show Advantage options</label><br>
         </div>
-        <div id="advance">
-            <label for="forPaswLength" id="changePaswLabel">Password Length (8-128): 8</label>
-            <input type="number" id="forPaswLength" min="8" max="128" value="8">
-<br>
-            <label for="forPaswCap" id="changeCapLabel">Cap Lettes in Password: 1</label>
-            <input type="number" id="forPaswCap" min="1" max="2" value="1">
-<br>
-            <label for="forPaswNum" id="changeNumLabel">Numbers in Password: 1</label>
-            <input type="number" id="forPaswNum" min="1" max="2" value="1">
-<br>
-            <label for="forPaswSym" id="changeSymLabel">Symbols in Password: 1</label>
-            <input type="number" id="forPaswSym" min="1" max="2" value="1">            
+        <div  id="advance">
+            <div id="advanceLen">
+                <label for="forPaswLength" id="changePaswLabel">Password Length (8-128):</label>
+                <input type="number" id="forPaswLength" min="8" max="128" value="8">
+                <p id="errorMsgL"></p>
+            </div>
+            <div id="advanceChar">
+                <label for="forPaswCap" id="changeCapLabel">Cap Letters in Password:</label>
+                <input type="number" id="forPaswCap" min="0" max="127" value="1">
+
+                <br>
+                <label for="forPaswNum" id="changeNumLabel">Numbers in Password:</label>
+                <input type="number" id="forPaswNum" min="0" max="127" value="1">
+
+                <br>
+                <label for="forPaswSym" id="changeSymLabel">Symbols in Password:</label>
+                <input type="number" id="forPaswSym" min="0" max="127" value="1">            
+                <p id="errorMsg"></p>
+
+            </div>
         </div>
     <script src='./assets/js/main.js'></script>
 </body>

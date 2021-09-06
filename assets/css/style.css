@@ -1,11 +1,32 @@
 body {
+    margin: auto;
+    height: auto;
+    width: 500px;
     margin-top: 100px;
     text-align: center;
+    overflow-wrap: break-word;
 }
+.alignLeft {
+    text-align: left;
+    line-height: 30%;
+}
+
 #showPasw {
     user-select: all;
 }
 
 #advance {
     display: none;
+}
+
+#advanceLen {
+    height: 60px;
+    width: auto;
+}
+#advanceLen p  {
+    margin: 5px;
+}
+#paswBox{
+height: 100px;
+width: auto;    
 }
