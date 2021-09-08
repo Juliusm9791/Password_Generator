@@ -1,3 +1,7 @@
+*{
+font-family:'Times New Roman', Times, serif;
+}
+
 body {
     margin: auto;
     height: auto;
@@ -6,9 +10,42 @@ body {
     text-align: center;
     overflow-wrap: break-word;
 }
-.alignLeft {
-    text-align: left;
-    line-height: 30%;
+.show {
+    position: relative;
+    text-align: justify;
+    height: auto;
+    width: 390px;
+    margin: 5px;
+    padding: 10px;
+    background-color: blue;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    top: 25px;
+    left: 0px;
+    font-size: 14px;
+    visibility: hidden;
+}
+
+.topName{
+    position: relative;
+    background-color: white;
+    width: 70%;
+    top: 20px;
+    left: 70px;
+    margin: 5px;
+    cursor: grab;
+}
+
+.about:hover .show{
+    visibility: visible;
+}
+
+.topBox {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
 }
 
 #showPasw {
@@ -27,6 +64,52 @@ body {
     margin: 5px;
 }
 #paswBox{
-height: 100px;
-width: auto;    
+    padding: 20px;
+    height: 90px;
+    border: 1px solid gray;
+    border-style: dashed; 
+}
+
+/* #paswGen {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color: #800000;
+    box-shadow: inset 0px 0px 10px #600000;
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+}
+#paswGen:hover{
+    background-color: #aa0000;
+    cursor: pointer;
+ } */
+
+.inputBox{
+padding: 5px;
+text-align: left;
+margin: 0px 15px 15px;
+}
+#showAdvance {
+    margin: 5px 0px;
+}
+
+#advanceChar, #advanceLen{
+    padding: 5px;
+    height: 30px;
+    margin: 0px 40px 5px;
+} 
+
+#errorMsgL, #errorMsg {
+    position: relative;
+    top: -27px;
+    left: 330px;
+    width: 110px;
+}
+#errorMsg{
+    top: -70px;
+}
+#forPaswLength, #forPaswCap, #forPaswNum, #forPaswSym{
+    width: 50px;
 }

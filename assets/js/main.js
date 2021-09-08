@@ -8,6 +8,10 @@ let howCapsInPasw = 1;
 let howNumbInPasw = 1;
 let howSymbInPasw = 1;
 
+function $(id) {
+    document.getElementById(id);
+}
+
 function readValues() {
     paswLength = document.getElementById("forPaswLength").value;
     // console.log(paswLength);
@@ -30,6 +34,10 @@ function updateVisibility() {
         howCapsInPasw = document.getElementById("forPaswCap").value = 1;
         howNumbInPasw = document.getElementById("forPaswNum").value = 1;
         howSymbInPasw = document.getElementById("forPaswSym").value = 1;
+        document.getElementById("advanceLen").style.color = "black";  
+        document.getElementById("errorMsgL").innerHTML = ""; 
+        document.getElementById("errorMsg").innerHTML = "";
+        document.getElementById("advanceChar").style.color = "black";
     }
 }
 
@@ -46,14 +54,16 @@ document.getElementById("forPaswSym").addEventListener("change", updateText);
     console.log(typeof paswLength, paswLength)
     if (paswLength < 8 || paswLength > 128) {
         console.log("dfafasfasfsafasfas")
-        document.getElementById("paswGen").disabled = true;
+        // document.getElementById("paswGen").style.backgroundColor = "#aaaaaa";
         document.getElementById("advanceLen").style.color = "red";
         document.getElementById("errorMsgL").innerHTML = "Wrong Length";
+        document.getElementById("paswGen").disabled = true;
     }
     else {
-        document.getElementById("paswGen").disabled = false;    
+        // document.getElementById("paswGen").style.backgroundColor = "#80000";
         document.getElementById("advanceLen").style.color = "black";  
         document.getElementById("errorMsgL").innerHTML = ""; 
+        document.getElementById("paswGen").disabled = false;    
     }
     updateText()
  }
@@ -64,14 +74,16 @@ function updateText() {
     let allow = paswLength - howCapsInPasw - howNumbInPasw - howSymbInPasw -1;
     console.log(allow, howCapsInPasw);
         if (allow < 0 || paswLength < 8 || paswLength > 128) {
-        document.getElementById("errorMsg").innerHTML = "Too much characters";
-        document.getElementById("paswGen").disabled = true;
+        document.getElementById("errorMsg").innerHTML = "Too many characters";
+        // document.getElementById("paswGen").style.backgroundColor = "#aaaaaa";
         document.getElementById("advanceChar").style.color = "red";
+        document.getElementById("paswGen").disabled = true;
         }
         else {
             document.getElementById("errorMsg").innerHTML = "";
-            document.getElementById("paswGen").disabled = false;
             document.getElementById("advanceChar").style.color = "black";
+            // document.getElementById("paswGen").style.backgroundColor = "#80000";
+            document.getElementById("paswGen").disabled = false;
         }
 }
  

@@ -10,23 +10,23 @@
     
 </head>
 <body>
-    <div class="alignLeft">
-    <p>Standard password generator length is:</p>
-    <p>8&nbsp;characters include: 1&nbsp;Caps letter, 1&nbsp;number,</p> 
-    <p>1&nbsp;symbol and other characters is lower case letters.</p>
-    </div>
-    <h1>Password Generator</h1>
-        <div>
+       
+        <div class="about">
+            <p class="show">Standard password generator length is 8&nbsp;characters: 1&nbsp;Caps letter, 1&nbsp;number, 1&nbsp;symbol and other characters is lower case letters.</p>
+            <h1 class="topName">Password Generator
+        </div>
+       </h1>
+        <div class="topBox">
             <div id="paswBox">
                 <p id="showPasw">Your Password will be here</p>
-                <p id="len">Your Password Length Is: 8</p>
             </div>
+            <p id="len">Your Password Length Is: 8</p>
             <button id="paswGen" onclick="genAndShow()">Generate Password</button>
         </div>
 <br>
-        <div>
+        <div class="inputBox">
+            <label for="showAdvance" id="showAdvanceLab">Show Advantage Options</label>
             <input type="checkbox" id="showAdvance">
-            <label for="checkbox" id="showAdvanceLab">Show Advantage options</label><br>
         </div>
         <div  id="advance">
             <div id="advanceLen">
@@ -35,7 +35,7 @@
                 <p id="errorMsgL"></p>
             </div>
             <div id="advanceChar">
-                <label for="forPaswCap" id="changeCapLabel">Cap Letters in Password:</label>
+                <label for="forPaswCap" id="changeCapLabel">Caps Letters in Password:</label>
                 <input type="number" id="forPaswCap" min="0" max="127" value="1">
 
                 <br>
@@ -49,6 +49,7 @@
 
             </div>
         </div>
+
     <script src='./assets/js/main.js'></script>
 </body>
 </html>
