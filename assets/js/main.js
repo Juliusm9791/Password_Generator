@@ -9,44 +9,44 @@ let howNumbInPasw = 1;
 let howSymbInPasw = 1;
 
 function $(id) {
-    document.getElementById(id);
+   return document.getElementById(id);
 }
 
 function readValues() {
-    paswLength = document.getElementById("forPaswLength").value;
+    paswLength = $("forPaswLength").value;
     // console.log(paswLength);
-    howCapsInPasw = document.getElementById("forPaswCap").value;
-    howNumbInPasw = document.getElementById("forPaswNum").value;
-    howSymbInPasw = document.getElementById("forPaswSym").value;
+    howCapsInPasw = $("forPaswCap").value;
+    howNumbInPasw = $("forPaswNum").value;
+    howSymbInPasw = $("forPaswSym").value;
 }
 
 //        Advantage meniu Show / Hide
 
-document.getElementById("showAdvance").addEventListener("change", updateVisibility);
+$("showAdvance").addEventListener("change", updateVisibility);
 
 function updateVisibility() {
     if (this.checked) {
-        document.getElementById("advance").style.display = "block";
+        $("advance").style.display = "block";
     } else {
-        document.getElementById("advance").style.display = "none";
-        document.getElementById("paswGen").disabled = false; 
-        paswLength = document.getElementById("forPaswLength").value = 8;
-        howCapsInPasw = document.getElementById("forPaswCap").value = 1;
-        howNumbInPasw = document.getElementById("forPaswNum").value = 1;
-        howSymbInPasw = document.getElementById("forPaswSym").value = 1;
-        document.getElementById("advanceLen").style.color = "black";  
-        document.getElementById("errorMsgL").innerHTML = ""; 
-        document.getElementById("errorMsg").innerHTML = "";
-        document.getElementById("advanceChar").style.color = "black";
+        $("advance").style.display = "none";
+        $("paswGen").disabled = false; 
+        paswLength = $("forPaswLength").value = 8;
+        howCapsInPasw = $("forPaswCap").value = 1;
+        howNumbInPasw = $("forPaswNum").value = 1;
+        howSymbInPasw = $("forPaswSym").value = 1;
+        $("advanceLen").style.color = "black";  
+        $("errorMsgL").innerHTML = ""; 
+        $("errorMsg").innerHTML = "";
+        $("advanceChar").style.color = "black";
     }
 }
 
 //        Selecting and testng values "Advantage options"
 
-document.getElementById("forPaswLength").addEventListener("change", updateTextLen);
-document.getElementById("forPaswCap").addEventListener("change", updateText);
-document.getElementById("forPaswNum").addEventListener("change", updateText);
-document.getElementById("forPaswSym").addEventListener("change", updateText);
+$("forPaswLength").addEventListener("change", updateTextLen);
+$("forPaswCap").addEventListener("change", updateText);
+$("forPaswNum").addEventListener("change", updateText);
+$("forPaswSym").addEventListener("change", updateText);
 
 
  function updateTextLen() {
@@ -54,16 +54,16 @@ document.getElementById("forPaswSym").addEventListener("change", updateText);
     console.log(typeof paswLength, paswLength)
     if (paswLength < 8 || paswLength > 128) {
         console.log("dfafasfasfsafasfas")
-        // document.getElementById("paswGen").style.backgroundColor = "#aaaaaa";
-        document.getElementById("advanceLen").style.color = "red";
-        document.getElementById("errorMsgL").innerHTML = "Wrong Length";
-        document.getElementById("paswGen").disabled = true;
+        // $("paswGen").style.backgroundColor = "#aaaaaa";
+        $("advanceLen").style.color = "red";
+        $("errorMsgL").innerHTML = "Wrong Length";
+        $("paswGen").disabled = true;
     }
     else {
-        // document.getElementById("paswGen").style.backgroundColor = "#80000";
-        document.getElementById("advanceLen").style.color = "black";  
-        document.getElementById("errorMsgL").innerHTML = ""; 
-        document.getElementById("paswGen").disabled = false;    
+        // $("paswGen").style.backgroundColor = "#80000";
+        $("advanceLen").style.color = "black";  
+        $("errorMsgL").innerHTML = ""; 
+        $("paswGen").disabled = false;    
     }
     updateText()
  }
@@ -74,16 +74,16 @@ function updateText() {
     let allow = paswLength - howCapsInPasw - howNumbInPasw - howSymbInPasw -1;
     console.log(allow, howCapsInPasw);
         if (allow < 0 || paswLength < 8 || paswLength > 128) {
-        document.getElementById("errorMsg").innerHTML = "Too many characters";
-        // document.getElementById("paswGen").style.backgroundColor = "#aaaaaa";
-        document.getElementById("advanceChar").style.color = "red";
-        document.getElementById("paswGen").disabled = true;
+        $("errorMsg").innerHTML = "Too many characters";
+        // $("paswGen").style.backgroundColor = "#aaaaaa";
+        $("advanceChar").style.color = "red";
+        $("paswGen").disabled = true;
         }
         else {
-            document.getElementById("errorMsg").innerHTML = "";
-            document.getElementById("advanceChar").style.color = "black";
-            // document.getElementById("paswGen").style.backgroundColor = "#80000";
-            document.getElementById("paswGen").disabled = false;
+            $("errorMsg").innerHTML = "";
+            $("advanceChar").style.color = "black";
+            // $("paswGen").style.backgroundColor = "#80000";
+            $("paswGen").disabled = false;
         }
 }
  
@@ -121,7 +121,7 @@ function genAndShow() {
     newPassword = lowerLetters + capInPasw + numbersInPasw + symbolInPasw;
     // console.log(newPassword);
     let shuffledPasw = shuffle();
-    document.getElementById("showPasw").innerHTML = shuffledPasw;
+    $("showPasw").innerHTML = shuffledPasw;
     // console.log(shuffledPasw);
-    document.getElementById("len").innerHTML = "Your Password Length Is: " + shuffledPasw.length;
+    $("len").innerHTML = "Your Password Length Is: " + shuffledPasw.length;
 }
