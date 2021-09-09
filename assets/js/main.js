@@ -51,7 +51,6 @@ gebi("forPaswSym").addEventListener("change", updateText);
 
  function updateTextLen() {
     readValues();
-    console.log(typeof paswLength, paswLength)
     if (paswLength < 8 || paswLength > 128) {
         console.log("dfafasfasfsafasfas")
         // gebi("paswGen").style.backgroundColor = "#aaaaaa";
@@ -119,9 +118,7 @@ function genAndShow() {
     let numbersInPasw = pickRandom(howNumbInPasw,2);
     let symbolInPasw = pickRandom(howSymbInPasw,3);
     newPassword = lowerLetters + capInPasw + numbersInPasw + symbolInPasw;
-    // console.log(newPassword);
     let shuffledPasw = shuffle();
     gebi("showPasw").innerHTML = shuffledPasw;
-    // console.log(shuffledPasw);
     gebi("len").innerHTML = "Your Password Length Is: " + shuffledPasw.length;
 }
