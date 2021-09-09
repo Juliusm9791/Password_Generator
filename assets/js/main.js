@@ -55,7 +55,7 @@ gebi("forPaswSym").addEventListener("change", updateText);
         console.log("dfafasfasfsafasfas")
         // gebi("paswGen").style.backgroundColor = "#aaaaaa";
         gebi("advanceLen").style.color = "red";
-        gebi("errorMsgL").innerHTML = "Wrong Length";
+        gebi("errorMsgL").innerHTML = "Wrong Length or";
         gebi("paswGen").disabled = true;
     }
     else {
