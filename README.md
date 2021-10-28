@@ -18,7 +18,7 @@ Password is displayed in the page.
 
 ## Link to website
 
-https://juliusm9791.github.io/03-JavaScript-Password-Generator/
+https://juliusm9791.github.io/Password_Generator/
 
 ## Mock-Up
 The following images shows the web application's appearance and functionality:
