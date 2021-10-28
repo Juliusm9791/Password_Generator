@@ -1,4 +1,4 @@
-# 03-JavaScript-Password-Generator
+# Password-Generator
 
 Generates random passwords based on criteria that user selects.
 
