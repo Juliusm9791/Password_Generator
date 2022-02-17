@@ -1,7 +1,7 @@
 let charArray = ["qwertyuiopasdfghjklzxcvbnm", //0
                  "QWERTYUIOPASDFGHJKLZXCVBNM", //1
                  "1234567890",                 //2
-                 "-=~!@#gebi%^&*()_+[]{}|?"]   //3
+                 "-=~!@#%^&*()_+[]{}|?"]   //3
 
 let paswLength = 8;
 let howCapsInPasw = 1;
